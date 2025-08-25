@@ -1,0 +1,139 @@
+/* CardPaymentForm.css
+   Scoped styles for the Card Payment page. Import this file in CardPaymentForm.jsx.
+*/
+
+/* --- Panel header --- */
+.cusdash-profile-section-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* --- Summary rows (Booking / Labor / Amount / Location) --- */
+.cusdash-field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #2a3055;
+}
+
+.cusdash-field-row:last-of-type {
+  border-bottom: none;
+}
+
+.cusdash-field-label {
+  color: #aab1c8;
+  font-size: 13px;
+  min-width: 120px;
+}
+
+.cusdash-field-value {
+  font-weight: 600;
+  color: #e7e9f3;
+  text-align: right;
+}
+
+/* --- Divider look (for the <hr/> in the form) --- */
+.cusdash-profile-section-card hr {
+  border: none;
+  border-top: 1px solid #2a3055;
+  margin: 14px 0;
+}
+
+/* --- Form layout & inputs --- */
+.cusdash-form {
+  display: grid;
+  gap: 12px;
+}
+
+.cusdash-form-row {
+  display: grid;
+  gap: 8px;
+}
+
+.cusdash-form-row label {
+  font-size: 13px;
+  color: #c6cbe0;
+}
+
+/* Inputs: defaults for text/password on dark background */
+.cusdash-form-row input[type="text"],
+.cusdash-form-row input[type="password"],
+.cusdash-form-row input[type="tel"],
+.cusdash-form-row input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #2a3055;
+  background: #151a30;
+  color: #e7e9f3;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+  font-size: 14px;
+}
+
+.cusdash-form-row input::placeholder {
+  color: #6f7796;
+}
+
+.cusdash-form-row input:focus {
+  border-color: #4a69e6;
+  box-shadow: 0 0 0 3px rgba(90, 122, 250, 0.2);
+}
+
+/* Make card number feel monospaced for readability */
+.cusdash-form-row input[placeholder*="1234"],
+.cusdash-form-row input[placeholder*="9012"] {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .4px;
+}
+
+/* --- 3-column grid for Exp/CVC row (the component already sets inline template; this ensures consistent gap/responsiveness) --- */
+.cusdash-filter-grid {
+  display: grid;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .cusdash-filter-grid {
+    grid-template-columns: 1fr !important; /* collapse to one column on small screens */
+  }
+}
+
+/* --- Form actions (Pay / Cancel buttons) --- */
+.cusdash-form-actions .cusdash-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #2a3055;
+  background: #1b2040;
+  color: #e7e9f3;
+  cursor: pointer;
+  transition: background .15s ease, transform .05s ease;
+}
+
+.cusdash-form-actions .cusdash-btn:hover {
+  background: #202652;
+}
+
+.cusdash-form-actions .cusdash-btn:active {
+  transform: translateY(1px);
+}
+
+.cusdash-form-actions .cusdash-btn-primary {
+  background: #5b7cfa;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+}
+
+.cusdash-form-actions .cusdash-btn-primary:hover {
+  background: #4a69e6;
+}
+
+/* --- Subtle helper text under the form --- */
+.muted {
+  color: #aab1c8;
+  font-size: 12px;
+}

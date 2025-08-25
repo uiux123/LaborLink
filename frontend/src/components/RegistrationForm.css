@@ -1,0 +1,180 @@
+.registration-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../pages/bgimg2.jpg') no-repeat center/cover;
+  padding: 40px 20px;
+}
+
+.rg-shadow-box {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 50px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 550px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.rg-shadow-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.rg-header h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #5f2c82;
+  font-weight: 700;
+}
+
+.rg-header p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 35px;
+}
+
+.rg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.rg-input-group {
+  position: relative;
+}
+
+.rg-input-group input,
+.rg-input-group select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.rg-input-group input:focus,
+.rg-input-group select:focus {
+  border-color: #5f2c82;
+  box-shadow: 0 0 8px rgba(95, 44, 130, 0.3);
+}
+
+.rg-input-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><polygon points='6,9 12,15 18,9' style='fill:%23666;'/></svg>") no-repeat right 12px center;
+  background-size: 16px;
+}
+
+.rg-submit-btn {
+  background: linear-gradient(135deg, #5f2c82, #49a09d);
+  color: white;
+  border: none;
+  padding: 15px 0;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.rg-submit-btn:hover {
+  background: linear-gradient(135deg, #6a1b9a, #3b82f6);
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.rg-login-link {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 20px;
+}
+
+.rg-login-link a {
+  color: #5f2c82;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.rg-login-link a:hover {
+  text-decoration: underline;
+}
+
+.rg-input-group {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #5f2c82;
+  font-size: 1rem;
+}
+
+.rg-input-group input,
+.rg-input-group select {
+  width: 100%;
+  padding: 14px 16px 14px 40px; /* padding-left to fit icon */
+  border: 1.5px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.rg-input-group input:focus,
+.rg-input-group select:focus {
+  border-color: #5f2c82;
+  box-shadow: 0 0 8px rgba(95, 44, 130, 0.3);
+}
+
+.select-group {
+  margin-bottom: 20px;
+}
+
+.select-label {
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #4a148c;
+}
+
+.select-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.select-card {
+  flex: 1 1 45%;
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.select-card:hover {
+  background: #ebf3ff;
+}
+
+.select-card.selected {
+  border-color: #4a148c;
+  background: #f3e5f5;
+}
+
+.select-card span {
+  font-size: 0.95rem;
+  color: #333;
+}

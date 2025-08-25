@@ -1,0 +1,119 @@
+.select-role-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #5f2c82, #49a09d);
+  padding: 50px 20px;
+}
+
+.select-role-container {
+  background: white;
+  border-radius: 25px;
+  padding: 50px 35px;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.select-role-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5f2c82;
+  margin-bottom: 10px;
+}
+
+.select-role-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.select-role-grid {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.select-role-card {
+  background: #fdfdfd;
+  border-radius: 20px;
+  flex: 1 1 180px;
+  max-width: 200px;
+  padding: 25px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-role-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  background: #f3f0fa;
+}
+
+.select-role-card.selected {
+  border: 3px solid #5f2c82;
+  background: #f7f3fd;
+}
+
+.select-role-icon {
+  color: #5f2c82;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.select-role-card:hover .select-role-icon {
+  transform: scale(1.1);
+  color: #8b0697;
+}
+
+.select-role-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.select-role-desc {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.select-role-card.selected .select-role-label,
+.select-role-card.selected .select-role-desc {
+  color: #5f2c82;
+}
+
+.select-role-continue-btn {
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 50px; /* Pill shape */
+  border: none;
+  background: linear-gradient(135deg, #5f2c82, #60db93); /* Gradient theme */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.select-role-continue-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #6a1b9a, #65bdd8);
+}
+
+.select-role-continue-btn:disabled {
+  background: #c5b3e0;
+  cursor: not-allowed;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}

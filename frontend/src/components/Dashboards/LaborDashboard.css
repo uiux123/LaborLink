@@ -1,0 +1,302 @@
+:root {
+  --primary-color: #6D28D9;
+  --accent-color: #A78BFA;
+  --background-color: #F5F3FF;
+  --surface-soft: #f7f5ff;
+  --white-color: #ffffff;
+  --gray-color: #6B7280;
+  --dark-gray: #374151;
+  --error-color: #DC2626;
+  --success-color: #16a34a;
+  --border-color: #e5e7eb;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--dark-gray);
+}
+
+/* ====== LAYOUT ====== */
+.labor-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+/* Sidebar */
+.labor-sidebar {
+  width: 260px;
+  background-color: var(--white-color);
+  padding: 40px 28px;
+  box-shadow: 2px 0 15px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.labor-sidebar-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 40px;
+}
+
+.labor-sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.labor-nav-item {
+  padding: 14px 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--gray-color);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  user-select: none;
+}
+
+.labor-nav-item:hover { background-color: var(--surface-soft); color: var(--primary-color); }
+.labor-nav-item.active {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  box-shadow: 0 0 8px rgba(109,40,217,0.45);
+}
+.labor-logout { margin-top: auto; font-weight: 700; }
+
+/* ====== MAIN CONTENT ====== */
+.labor-main-content {
+  flex: 1;
+  padding: 36px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ====== HEADER & STATS ====== */
+.labor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.labor-header h1 {
+  font-size: 28px;
+  margin: 0;
+  color: var(--primary-color);
+}
+.labor-subtitle { margin: 0; color: var(--gray-color); font-size: 16px; }
+.labor-date { color: var(--gray-color); font-weight: 600; font-size: 14px; }
+
+.labor-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.labor-stat-card {
+  background-color: var(--white-color);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 20px rgba(109,40,217,0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.labor-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(109,40,217,0.15);
+}
+.labor-stat-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gray-color);
+  font-weight: 600;
+}
+.labor-stat-icon { font-size: 18px; }
+.labor-stat-title { font-size: 14px; }
+.labor-stat-value {
+  margin-top: 8px;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+/* ====== PROFILE TABS ====== */
+.labor-profile-tabs { display: flex; gap: 12px; flex-wrap: wrap; }
+.labor-profile-tab {
+  padding: 10px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background-color: var(--white-color);
+  color: var(--dark-gray);
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+.labor-profile-tab:hover { background-color: var(--surface-soft); color: var(--primary-color); }
+.labor-profile-tab.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white-color);
+  box-shadow: 0 6px 16px rgba(109,40,217,0.18);
+}
+
+/* ====== PROFILE & CARDS ====== */
+.labor-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 24px;
+  width: 100%;
+}
+.labor-profile-overview,
+.labor-card,
+.labor-profile-section-card {
+  background-color: var(--white-color);
+  border-radius: 18px;
+  box-shadow: 0 12px 25px rgba(109,40,217,0.1);
+  animation: fadeInUp 0.35s ease;
+  padding: 22px;
+}
+
+.labor-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.labor-avatar-circle {
+  width: 64px;
+  height: 64px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 26px;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.labor-profile-info h3 { font-size: 22px; margin: 0; color: var(--primary-color); }
+.labor-role-label { font-size: 13px; color: var(--gray-color); margin-top: 4px; }
+
+.labor-profile-section-card {
+  background-color: #faf9ff;
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+.labor-profile-section-card h4 { margin: 0 0 8px 0; font-size: 16px; color: var(--primary-color); }
+.labor-profile-section-card p { margin: 6px 0; color: var(--dark-gray); font-size: 15px; }
+
+.labor-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid var(--border-color);
+}
+.labor-badge.on { color: var(--success-color); background: #ecfdf5; border-color: rgba(22,163,74,0.35); }
+.labor-badge.off { color: #b91c1c; background: #fef2f2; border-color: rgba(185,28,28,0.3); }
+
+/* ====== BOOKINGS ====== */
+.labor-booking-list { display: flex; flex-direction: column; gap: 14px; margin-top: 12px; }
+.labor-booking-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(109,40,217,0.06);
+  transition: box-shadow 0.2s ease, transform 0.08s ease;
+  animation: fadeInUp 0.25s ease;
+}
+.labor-booking-item:hover { box-shadow: 0 12px 24px rgba(109,40,217,0.1); transform: translateY(-1px); }
+.labor-booking-item .left { display: grid; gap: 6px; font-size: 14px; color: var(--dark-gray); }
+.labor-booking-item .left strong { color: var(--dark-gray); }
+.labor-booking-item .right { display: flex; align-items: center; gap: 10px; }
+.labor-booking-item .right .labor-btn { padding: 10px 14px; border-radius: 12px; font-size: 13px; font-weight: 800; }
+
+/* ====== PAYMENT BADGES ====== */
+.cusdash-payment-badges { display: flex; gap: 6px; margin-top: 6px; }
+.cusdash-payment-badges .pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.cusdash-payment-badges .pill.cash { background: #2d3748; color: #f6e05e; border: 1px solid #4a5568; }
+.cusdash-payment-badges .pill.card { background: #2b6cb0; color: #fff; border: 1px solid #2c5282; }
+.cusdash-payment-badges .pill.accepted { background: #16a34a; color: #fff; }
+.cusdash-payment-badges .pill.pending { background: #f59e0b; color: #111; }
+
+.cusdash-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  margin-top: 6px;
+}
+.cusdash-chip.success { color: var(--success-color); background: #ecfdf5; border-color: rgba(22,163,74,0.25); }
+.cusdash-chip.warn { color: #b45309; background: #fffbeb; border-color: rgba(180,83,9,0.25); }
+
+/* ====== BUTTONS ====== */
+.labor-btn { padding: 12px 20px; font-weight: 800; border: none; border-radius: 14px; font-size: 14px; cursor: pointer; transition: background 0.25s; }
+.labor-btn-primary { background: var(--primary-color); color: #fff; }
+.labor-btn-primary:hover { background: var(--accent-color); }
+.labor-btn-danger { background: var(--error-color); color: #fff; }
+.labor-btn-danger:hover { background: #b91c1c; }
+
+/* ====== UTILITIES ====== */
+.labor-loading-text { font-size: 20px; text-align: center; padding: 120px 24px; color: var(--primary-color); }
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1100px) {
+  .labor-dashboard-grid { grid-template-columns: 1fr; }
+  .labor-stats { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .labor-main-content { padding: 28px 24px; }
+  .labor-stats { grid-template-columns: 1fr 1fr; }
+  .labor-booking-item { grid-template-columns: 1fr; }
+  .labor-booking-item .right { justify-content: flex-start; }
+}
+@media (max-width: 720px) {
+  .labor-sidebar { display: none; }
+  .labor-stats { grid-template-columns: 1fr; }
+}

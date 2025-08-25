@@ -1,0 +1,215 @@
+:root {
+  --primary-color: #a066d2;
+  --primary-hover: #8e4dc3;
+  --bg-color: #ffffff;
+  --input-bg: #fff;
+  --text-color: #333;
+}
+
+.landing-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    url('../pages/bgimg2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-container {
+  display: flex;
+  max-width: 850px;
+  width: 100%;
+  background: var(--bg-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+.login-form-section {
+  flex: 1;
+  padding: 2rem;
+}
+
+.login-image-section {
+  flex: 1;
+  background: linear-gradient(to bottom right, #a066d2, #8e4dc3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.login-image-section .overlay h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.login-image-section .overlay p {
+  font-size: 1rem;
+}
+
+.auth-title {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.auth-group {
+  margin-bottom: 1rem;
+}
+
+.auth-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.auth-select,
+.auth-group input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  background-color: var(--input-bg);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.auth-select:focus,
+.auth-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(160, 102, 210, 0.2);
+}
+
+.icon-input {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.icon-input input {
+  padding-left: 2.5rem;
+}
+
+/* Modern button design */
+.auth-button {
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(160, 102, 210, 0.4);
+  transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(160, 102, 210, 0.6);
+}
+
+.auth-button:disabled {
+  background: #b0b0b0;
+  cursor: not-allowed;
+}
+
+.switch-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.switch-link a {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Role cards */
+.role-cards {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+  justify-content: center;
+}
+
+.role-card {
+  flex: 1;
+  max-width: 70px;
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  background-color: #fafafa;
+  text-align: center;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.role-icon {
+  color: inherit;
+  font-size: 26px;
+}
+
+.role-card:hover {
+  border-color: var(--primary-hover);
+  background-color: var(--primary-hover);
+  color: white;
+  box-shadow: 0 4px 12px rgba(160, 102, 210, 0.5);
+}
+
+.role-card.selected {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 12px rgba(160, 102, 210, 0.7);
+  cursor: default;
+}
+
+/* OTP input styling */
+.auth-group input[name="code"] {
+  letter-spacing: 0.25rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-image-section {
+    order: -1;
+  }
+
+  .login-image-section .overlay h3 {
+    font-size: 1.5rem;
+  }
+}
